@@ -1,9 +1,7 @@
 package gps;
 /**
  * Bicicleta class
- * 
  * @Java IES Severo Ochoa
- * @2.0
  */
 
 public class Bicicleta {
@@ -19,12 +17,9 @@ public class Bicicleta {
         int sum2 = 0;
         int sum3 = 0;
         
-        for(int i=0; i<camino1.length; i++)
-        {
-            sum1 += camino1[i];
-            sum2 += camino2[i];
-            sum3 += camino3[i];
-        }
+        sum1 = Bicicleta.sumaRutas(camino1);
+        sum2 = Bicicleta.sumaRutas(camino2);
+        sum3 = Bicicleta.sumaRutas(camino3);        
         
         if(sum1 < sum2 && sum1 < sum3)
         {
@@ -50,6 +45,13 @@ public class Bicicleta {
         }
         
     }
+    public static int sumaRutas(int[] camino){
+        int suma = 0;
+        for(int i = 0; i < camino.length; i++){
+                suma+= camino[i];
+                }
+             return suma;
+     }
 
     public static void main(String[] args) {
         Bicicleta bici = new Bicicleta();
